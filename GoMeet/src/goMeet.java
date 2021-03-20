@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+//fuck fuck fuck fuck fuck fuc kuf kc ufkcu fkcu kfu fk
 public class goMeet extends Application {
 	
 	Button button;
