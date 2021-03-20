@@ -1,2 +1,2 @@
 # gomeet
-google meet opener
+automatic google meet opener
