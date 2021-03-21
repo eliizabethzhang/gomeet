@@ -1,4 +1,5 @@
-import javafx.scene.effect.Effect;
+package src;
+import javafx.scene.effect.Effect; 
 import javafx.scene.image.Image;
 
 import javax.imageio.ImageIO;
@@ -14,7 +15,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class goMeet extends Application implements EventHandler<ActionEvent> {
+public class GoMeet extends Application implements EventHandler<ActionEvent> {
 
 	Stage window;
 	Scene scene; Scene scene1; Scene scene2;
@@ -26,29 +27,27 @@ public class goMeet extends Application implements EventHandler<ActionEvent> {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-	
-		primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("gomeet_icon.png")));
-
 		window = primaryStage;
+		window.getIcons().add(new Image(this.getClass().getResourceAsStream("gomeet_icon.png")));
 		
 		Label label = new Label("lets fuck bears.");
 		Button button = new Button("fuck a bear");
 		button.setOnAction(e -> window.setScene(scene1));
 		VBox layout = new VBox(20);
 		layout.getChildren().addAll(label, button);
-		scene = new Scene(layout, 400, 300); 
+		scene = new Scene(layout, 200, 200); 
 		
 		Label label1 = new Label("the bear is curious.");
 		Button button1 = new Button("fuck a bear again");
 		button1.setOnAction(e -> window.setScene(scene2));
 		VBox layout1 = new VBox(20);
 		layout1.getChildren().addAll(label1, button1);
-		scene1 = new Scene(layout1, 200, 200);
+		scene1 = new Scene(layout1, 400, 200);
 		
 		Label label2 = new Label("the bear liked it. fuck it again");
 		Button button2 = new Button("the bear liked it. fuck the bear again again");
 		button2.setOnAction(e -> window.setScene(scene));
-		HBox layout2 = new HBox(40);
+		VBox layout2 = new VBox(40);
 		layout2.getChildren().addAll(label2, button2);
 		scene2 = new Scene(layout2, 400, 200);
 		
