@@ -1,14 +1,11 @@
 package src;
 import javafx.scene.effect.Effect; 
 import javafx.scene.image.Image;
-
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import javax.imageio.ImageIO;
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,9 +15,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.net.URI;
 import java.awt.Desktop;
@@ -42,14 +43,24 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 		window = primaryStage;
 		window.getIcons().add(new Image(this.getClass().getResourceAsStream("gomeet_icon.png")));
 		
-		Label label = new Label("lets fuck bears.");
+		Text t = new Text (20, 20, "goMeet");
+		t.setFont(Font.font("Verdana", FontWeight.BOLD, 50));
+		
+		
+		final ToggleGroup group = new ToggleGroup();
+
+		RadioButton rb1 = new RadioButton("yes");
+		rb1.setToggleGroup(group);
+		rb1.setSelected(true);
+		RadioButton rb2 = new RadioButton("no");
+		rb2.setToggleGroup(group);
+		
 		
 		Button button = new Button("fuck a bear");
 		button.setOnAction(e -> window.setScene(scene1));
 		VBox layout = new VBox(20);
-		RadioButton rb = new RadioButton("on");
 		
-		layout.getChildren().addAll(label, button, rb);
+		layout.getChildren().addAll(t, button, rb1, rb2);
 		layout.setAlignment(Pos.CENTER);
 		scene = new Scene(layout, 200, 200); 
 		
