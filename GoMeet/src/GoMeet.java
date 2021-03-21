@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,6 +36,7 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 		button.setOnAction(e -> window.setScene(scene1));
 		VBox layout = new VBox(20);
 		layout.getChildren().addAll(label, button);
+		layout.setAlignment(Pos.CENTER);
 		scene = new Scene(layout, 200, 200); 
 		
 		Label label1 = new Label("the bear is curious.");
@@ -42,17 +44,19 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 		button1.setOnAction(e -> window.setScene(scene2));
 		VBox layout1 = new VBox(20);
 		layout1.getChildren().addAll(label1, button1);
-		scene1 = new Scene(layout1, 400, 200);
+		layout1.setAlignment(Pos.CENTER);
+		scene1 = new Scene(layout1, 200, 200);
 		
-		Label label2 = new Label("the bear liked it. fuck it again");
-		Button button2 = new Button("the bear liked it. fuck the bear again again");
+		Label label2 = new Label("the bear liked it.");
+		Button button2 = new Button("fuck the bear again again");
 		Label label3 = new Label("don't wanna fuck the bear?");
 		Button button3 = new Button("fine.");
 		button2.setOnAction(e -> window.setScene(scene));
 		button3.setOnAction(e -> Popup.display("try again", "why....."));
 		VBox layout2 = new VBox(10);
 		layout2.getChildren().addAll(label2, button2, label3, button3);
-		scene2 = new Scene(layout2, 400, 200);
+		layout2.setAlignment(Pos.CENTER);
+		scene2 = new Scene(layout2, 200, 200);
 		
 		window.setTitle("goMeet");
 		window.setScene(scene);
