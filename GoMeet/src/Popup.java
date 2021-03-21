@@ -19,11 +19,11 @@ import javafx.stage.Stage;
 
 public class Popup {
 
-	public static void display(String title, String message) {
+	public static void display() {
 		
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);
-		window.setTitle(title);
+		window.setTitle("goMeet: Edit Settings");
 		window.setMinWidth(250);
 		
 		Label label = new Label(message);
