@@ -19,15 +19,16 @@ import javafx.stage.Stage;
 //useless class 
 public class Popup {
 
-	public static void display() {
+	public static void display(String error) {
 		
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);
-		window.setTitle("goMeet: Edit Settings");
+		window.setTitle("Error");
 		window.setMinWidth(250);
+		window.setMinHeight(200);
 		
-		Label label = new Label("random");
-		Button button = new Button("Close the window");
+		Label label = new Label(error);
+		Button button = new Button("OK");
 		button.setOnAction(e -> window.close());
 		
 		VBox layout = new VBox(10);
