@@ -46,9 +46,12 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 		
 		Label label2 = new Label("the bear liked it. fuck it again");
 		Button button2 = new Button("the bear liked it. fuck the bear again again");
+		Label label3 = new Label("don't wanna fuck the bear?");
+		Button button3 = new Button("fine.");
 		button2.setOnAction(e -> window.setScene(scene));
-		VBox layout2 = new VBox(40);
-		layout2.getChildren().addAll(label2, button2);
+		button3.setOnAction(e -> Popup.display("try again", "why....."));
+		VBox layout2 = new VBox(10);
+		layout2.getChildren().addAll(label2, button2, label3, button3);
 		scene2 = new Scene(layout2, 400, 200);
 		
 		window.setTitle("goMeet");
