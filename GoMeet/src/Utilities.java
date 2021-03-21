@@ -3,6 +3,7 @@ package src;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -11,6 +12,13 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Utilities {
+	
+	public static boolean isWeekend() {
+		
+	    DayOfWeek d = LocalDate.now().getDayOfWeek();
+	    return d == DayOfWeek.SATURDAY || d == DayOfWeek.SUNDAY;
+		
+	}
 	
 	// get if it's an A or B day
 	// returns 'A', 'B', or 'O' (off day, eg weekend)
@@ -100,4 +108,57 @@ public class Utilities {
 		
 	}
 	
+	public static void launchMeet(String meetCodeA, String meetCodeB, String icalURL, int authUser) {
+		char aOrBDay = 'O';
+		try {
+			aOrBDay = aOrBDay(icalURL);
+		} catch (MalformedURLException e2) {
+			System.out.println("Bad ical URL");
+		} catch (IOException e2) {
+			try {
+				aOrBDay = aOrBDay(icalURL);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		if (aOrBDay == 'A') {
+			try {
+				launchMeet(meetCodeA, authUser);
+			} catch (URISyntaxException e) {
+				System.out.println("Bad Meet URL");
+			} catch (IOException e) {
+				try {
+					launchMeet(meetCodeA, authUser);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		} else if (aOrBDay == 'B') {
+			try {
+				launchMeet(meetCodeB, authUser);
+			} catch (URISyntaxException e) {
+				System.out.println("Bad Meet URL");
+			} catch (IOException e) {
+				try {
+					launchMeet(meetCodeA, authUser);
+				} catch (URISyntaxException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		}
+	}
+
 }
