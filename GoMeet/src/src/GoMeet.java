@@ -23,8 +23,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import java.net.URI;
-import java.awt.Desktop;
 
 public class GoMeet extends Application implements EventHandler<ActionEvent> {
 
@@ -33,9 +31,10 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 
 	public static void main(String[] args) throws IOException, URISyntaxException {
 		launch(args);
-		Desktop d = Desktop.getDesktop();
-		d.browse(new URI("https://www.google.com/"));
-
+		//Desktop d = Desktop.getDesktop();
+		//d.browse(new URI("https://www.google.com/"));
+		// this part is getting implemented in Utilities.java
+		
 	}
 
 	@Override
