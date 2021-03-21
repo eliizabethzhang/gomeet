@@ -1,6 +1,8 @@
 *Too lazy to open your Google Meets for class? Can't remember if it's an A or B day?*
 
+google meet - oogle =
 # gomeet
+
 automatic google meet opener
 
 ---
