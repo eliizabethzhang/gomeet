@@ -251,7 +251,15 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 			code8 = sched8.getText();
 			t8 = time8.getText();
 			//call timer
+			String[]aDayCodes = arrayMaker(code1, code2, code3, code4);
+			String[]bDayCodes = arrayMaker(code5, code6, code7, code8);
+			String[]aDayTimes = arrayMaker(t1, t2, t3, t4);
+			String[]bDayTimes = arrayMaker(t5, t6, t7, t8);
+			ScheduledLauncher timer = new ScheduledLauncher(aDayTimes, aDayCodes, 
+					bDayTimes, bDayCodes, abFileT, authUserT);
+			Popup.display("Saved.");
 			});
+		
 		VBox layout3 = new VBox(10);
 		layout3.getChildren().addAll(label2);
 		layout3.getChildren().addAll(abs, abFile);
@@ -270,5 +278,13 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	public static String[] arrayMaker(String a, String b, String c, String d) {
+		String[] anArray = new String[4];
+		anArray[0] = a;
+		anArray[1] = b;
+		anArray[2] = c;
+		anArray[3] = d;
+		return anArray;
 	}
 }

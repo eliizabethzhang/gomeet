@@ -23,7 +23,7 @@ public class Popup {
 		
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);
-		window.setTitle("Error");
+		window.setTitle("goMeet: Message");
 		window.setMinWidth(250);
 		window.setMinHeight(200);
 		
