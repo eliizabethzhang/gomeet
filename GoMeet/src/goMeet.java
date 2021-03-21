@@ -1,4 +1,8 @@
 import javafx.scene.effect.Effect;
+import javafx.scene.image.Image;
+
+import javax.imageio.ImageIO;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,6 +26,9 @@ public class goMeet extends Application implements EventHandler<ActionEvent> {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+	
+		primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("gomeet_icon.png")));
+
 		window = primaryStage;
 		
 		Label label = new Label("lets fuck bears.");
