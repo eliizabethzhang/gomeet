@@ -2,6 +2,11 @@ package src;
 import javafx.scene.effect.Effect; 
 import javafx.scene.image.Image;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import javax.imageio.ImageIO;
 
 import javafx.application.Application;
@@ -11,18 +16,24 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.net.URI;
+import java.awt.Desktop;
 
 public class GoMeet extends Application implements EventHandler<ActionEvent> {
 
 	Stage window;
 	Scene scene; Scene scene1; Scene scene2;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, URISyntaxException {
 		launch(args);
+		Desktop d = Desktop.getDesktop();
+		d.browse(new URI("https://www.google.com/"));
 
 	}
 
@@ -32,10 +43,13 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 		window.getIcons().add(new Image(this.getClass().getResourceAsStream("gomeet_icon.png")));
 		
 		Label label = new Label("lets fuck bears.");
+		
 		Button button = new Button("fuck a bear");
 		button.setOnAction(e -> window.setScene(scene1));
 		VBox layout = new VBox(20);
-		layout.getChildren().addAll(label, button);
+		RadioButton rb = new RadioButton("on");
+		
+		layout.getChildren().addAll(label, button, rb);
 		layout.setAlignment(Pos.CENTER);
 		scene = new Scene(layout, 200, 200); 
 		
