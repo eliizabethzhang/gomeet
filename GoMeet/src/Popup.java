@@ -16,7 +16,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+//useless class 
 public class Popup {
 
 	public static void display() {
@@ -26,7 +26,7 @@ public class Popup {
 		window.setTitle("goMeet: Edit Settings");
 		window.setMinWidth(250);
 		
-		Label label = new Label(message);
+		Label label = new Label("random");
 		Button button = new Button("Close the window");
 		button.setOnAction(e -> window.close());
 		

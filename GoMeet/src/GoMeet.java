@@ -1,5 +1,5 @@
 package src;
-import javafx.scene.effect.Effect; 
+import javafx.scene.effect.Effect;  
 import javafx.scene.image.Image;
 import java.awt.Desktop;
 import java.io.IOException;
@@ -164,5 +164,11 @@ public class GoMeet extends Application implements EventHandler<ActionEvent> {
 		window.setScene(scene);
 		window.show();
 
+	}
+
+	@Override
+	public void handle(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
